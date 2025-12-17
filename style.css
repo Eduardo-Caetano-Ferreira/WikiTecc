@@ -1,0 +1,130 @@
+/* Estilos Gerais para o Corpo (Fundo Preto Sólido) */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    
+    /* Fundo Totalmente Preto e Cor do Texto Branca */
+    background-color: #000000; /* Fundo sólido preto */
+    color: #ffffff; /* Cor padrão do texto (claro) */
+    
+    scroll-behavior: smooth;
+}
+
+/* Container Principal (Fundo Escuro para o Conteúdo) */
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    
+    /* Fundo Escuro, mais contrastante que o fundo */
+    background: rgba(1a, 1a, 1a, 0.95); /* Preto quase opaco, levemente diferente do fundo */
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2); /* Sombra sutilmente avermelhada */
+    border-radius: 8px;
+    border: 1px solid #330000; /* Borda escura para profundidade */
+}
+
+/* Estilos de Cabeçalho (Header) */
+header {
+    background-color: #0d0d0d; /* Fundo do header um pouco mais escuro */
+    color: #ff3333; /* Vermelho vibrante para destaque do título/links de topo */
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 2px solid #ff3333; /* Linha de destaque vermelha */
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    color: white; /* Mantém o título principal branco */
+}
+
+/* Navegação e Links */
+nav p a {
+    color: #ff3333; /* Links de navegação em vermelho */
+}
+
+/* Links em Geral (no corpo principal) */
+li a, main a {
+    text-decoration: none;
+    color: #ff3333; /* Links em geral em vermelho */
+    font-weight: bold;
+}
+
+li a:hover, main a:hover {
+    text-decoration: underline;
+    color: #cc0000; /* Vermelho escuro no hover */
+}
+
+/* Títulos do Conteúdo */
+h2, h3 {
+    color: #f0f0f0; /* Títulos em cinza claro */
+    border-bottom: 1px solid #ff3333; /* Linha de divisão vermelha */
+    padding-bottom: 5px;
+}
+
+hr {
+    border-top: 1px solid #333;
+}
+
+/* Estilo para Tabela de Tópicos */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    border-bottom: 1px solid #222; /* Divisor sutil */
+    padding: 10px 0;
+}
+
+/* Mensagens de Feedback */
+.mensagem_feedback p {
+    padding: 10px;
+    border-radius: 4px;
+}
+
+p[style*="green"] { background-color: #004d00; color: #aaffaa !important; } /* Verde para sucesso */
+p[style*="red"] { background-color: #4a1a1a; color: #ffaaaa !important; } /* Vermelho escuro para erro */
+
+/* Estilo para Imagens DENTRO DO CONTEÚDO */
+.content-body img {
+    max-width: 600px; 
+    height: auto; 
+    display: block;
+    margin: 10px auto; 
+    border: 1px solid #555; 
+    padding: 5px;
+    background: #111;
+}
+
+/* Estilo para campos de formulário */
+input[type="text"], input[type="password"], textarea {
+    background-color: #333;
+    color: white;
+    border: 1px solid #ff3333; /* Borda dos campos em vermelho */
+    border-radius: 4px;
+    padding: 8px;
+}
+
+button[type="submit"] {
+    /* Botão de Criação/Geral (Fundo Vermelho) */
+    background-color: #ff3333 !important; 
+    color: #ffffff !important;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+/* Ajuste para o botão Salvar Edição (Amarelo, mantendo a diferenciação) */
+button[type="submit"][style*="ffc107"] {
+    background-color: #ffc107 !important;
+    color: #000000 !important;
+}
+
+/* Ajuste para o botão Deletar (Manter vermelho de erro, se adicionarmos) */
+a[style*="color: red;"] {
+    color: #ff3333 !important;
+}
