@@ -1,130 +1,271 @@
-/* Estilos Gerais para o Corpo (Fundo Preto Sólido) */
+/* =======================================================
+   ESTILO BASE (Tema Claro - Estilo ServiceDesk)
+   ======================================================= */
+
+/* Cores do Tema */
+:root {
+    --cor-fundo-geral: #f4f6f9; /* Cinza claro do fundo */
+    --cor-fundo-conteudo: #ffffff; /* Branco dos painéis */
+    --cor-texto-padrao: #495057; /* Cinza escuro para texto */
+    --cor-titulo-principal: #343a40; /* Cor para H1 */
+    --cor-titulo-secao: #0d6efd; /* Azul para H2/Links (cor principal) */
+    --cor-borda-suave: #dee2e6; /* Borda cinza clara */
+    --cor-sombra: rgba(0, 0, 0, 0.05); /* Sombra muito leve */
+    --cor-botao-primario: #0d6efd; /* Azul vibrante */
+    --cor-botao-hover: #0b5ed7; /* Azul mais escuro no hover */
+    --cor-botao-edicao: #fd7e14; /* Laranja (Última O.S.) */
+    --cor-botao-exclusao: #dc3545; /* Vermelho (padrão de erro) */
+    --cor-menu-lateral: #1a237e; /* Azul escuro do menu lateral da imagem (usaremos no header) */
+}
+
+/* Corpo da Página */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    
-    /* Fundo Totalmente Preto e Cor do Texto Branca */
-    background-color: #000000; /* Fundo sólido preto */
-    color: #ffffff; /* Cor padrão do texto (claro) */
-    
+    background-color: var(--cor-fundo-geral);
+    color: var(--cor-texto-padrao);
     scroll-behavior: smooth;
 }
 
-/* Container Principal (Fundo Escuro para o Conteúdo) */
+/* =======================================================
+   LAYOUT PRINCIPAL
+   ======================================================= */
+
+/* Container Principal (Cartão Branco) */
 main {
     width: 90%;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 25px;
-    
-    /* Fundo Escuro, mais contrastante que o fundo */
-    background: rgba(1a, 1a, 1a, 0.95); /* Preto quase opaco, levemente diferente do fundo */
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2); /* Sombra sutilmente avermelhada */
-    border-radius: 8px;
-    border: 1px solid #330000; /* Borda escura para profundidade */
+    max-width: 1100px; /* Um pouco mais largo */
+    margin: 30px auto;
+    padding: 30px;
+    background-color: var(--cor-fundo-conteudo);
+    border-radius: 8px; /* Cantos arredondados */
+    border: 1px solid var(--cor-borda-suave);
+    box-shadow: 0 2px 6px var(--cor-sombra);
 }
 
-/* Estilos de Cabeçalho (Header) */
+/* Cabeçalho (Adaptado do menu azul escuro da imagem) */
 header {
-    background-color: #0d0d0d; /* Fundo do header um pouco mais escuro */
-    color: #ff3333; /* Vermelho vibrante para destaque do título/links de topo */
-    padding: 15px 0;
+    background-color: var(--cor-menu-lateral);
+    color: white;
+    padding: 20px 0;
     text-align: center;
-    border-bottom: 2px solid #ff3333; /* Linha de destaque vermelha */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     position: relative;
 }
 
 header h1 {
     margin: 0;
-    color: white; /* Mantém o título principal branco */
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
-/* Navegação e Links */
-nav p a {
-    color: #ff3333; /* Links de navegação em vermelho */
+/* Navegação no Header */
+header nav p {
+    margin: 10px 0 0 0;
 }
 
-/* Links em Geral (no corpo principal) */
-li a, main a {
+header nav p a {
+    color: #e9ecef; /* Branco levemente acinzentado */
     text-decoration: none;
-    color: #ff3333; /* Links em geral em vermelho */
-    font-weight: bold;
+    font-weight: 500;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
 }
 
-li a:hover, main a:hover {
-    text-decoration: underline;
-    color: #cc0000; /* Vermelho escuro no hover */
+header nav p a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
 }
 
-/* Títulos do Conteúdo */
-h2, h3 {
-    color: #f0f0f0; /* Títulos em cinza claro */
-    border-bottom: 1px solid #ff3333; /* Linha de divisão vermelha */
+/* Link de Login/Logout (Posicionado no canto) */
+header div[style*="position: absolute"] a {
+    color: #e9ecef !important;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+header div[style*="position: absolute"] a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* =======================================================
+   TIPOGRAFIA E LINKS
+   ======================================================= */
+
+/* Títulos */
+h2 {
+    color: var(--cor-titulo-secao); /* Azul do tema */
+    border-bottom: 2px solid var(--cor-borda-suave);
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-weight: 500;
+}
+
+h3 {
+    color: var(--cor-titulo-principal);
+    border-bottom: 1px solid var(--cor-borda-suave);
     padding-bottom: 5px;
 }
 
-hr {
-    border-top: 1px solid #333;
+/* Links Padrão */
+a {
+    color: var(--cor-titulo-secao);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
-/* Estilo para Tabela de Tópicos */
+a:hover {
+    color: var(--cor-botao-hover);
+    text-decoration: underline;
+}
+
+/* Linha Horizontal */
+hr {
+    border: 0;
+    border-top: 1px solid var(--cor-borda-suave);
+    margin: 20px 0;
+}
+
+/* =======================================================
+   LISTAS E COMPONENTES
+   ======================================================= */
+
+/* Lista de Tópicos */
 ul {
     list-style: none;
     padding: 0;
 }
 
 li {
-    border-bottom: 1px solid #222; /* Divisor sutil */
-    padding: 10px 0;
+    border-bottom: 1px solid var(--cor-borda-suave);
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+li:last-child {
+    border-bottom: none;
+}
+
+/* Ajuste para os itens da lista */
+li a:first-child {
+    font-size: 1.1em;
+    color: var(--cor-titulo-principal);
+}
+li span {
+    margin-left: 10px;
+}
+li span[style*="color: #666"] {
+    color: #868e96 !important; /* Cor de data mais clara */
 }
 
 /* Mensagens de Feedback */
 .mensagem_feedback p {
-    padding: 10px;
-    border-radius: 4px;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+/* Verde Sucesso (Estilo "Atendente & Autorização") */
+p[style*="color: green"] { 
+    background-color: #d1e7dd; 
+    color: #0f5132 !important; 
+    border: 1px solid #badbcc;
+} 
+/* Vermelho Erro */
+p[style*="color: red"], p[style*="color: orange"] { 
+    background-color: #f8d7da; 
+    color: #842029 !important; 
+    border: 1px solid #f5c2c7;
 }
 
-p[style*="green"] { background-color: #004d00; color: #aaffaa !important; } /* Verde para sucesso */
-p[style*="red"] { background-color: #4a1a1a; color: #ffaaaa !important; } /* Vermelho escuro para erro */
+/* =======================================================
+   FORMULÁRIOS E BOTÕES
+   ======================================================= */
 
-/* Estilo para Imagens DENTRO DO CONTEÚDO */
+/* Campos de Entrada */
+input[type="text"], input[type="password"], textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--cor-texto-padrao);
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid var(--cor-borda-suave);
+    border-radius: 6px; /* Cantos arredondados */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura */
+}
+
+input:focus, textarea:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+    color: var(--cor-titulo-principal);
+}
+
+/* Botões */
+button[type="submit"] {
+    display: inline-block;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: var(--cor-botao-primario) !important;
+    border: 1px solid var(--cor-botao-primario);
+    padding: 10px 24px;
+    font-size: 1rem;
+    border-radius: 6px;
+    color: #fff !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--cor-botao-hover) !important;
+    border-color: var(--cor-botao-hover);
+}
+
+/* Botão de Edição (Estilo Laranja - "Última O.S.") */
+button[type="submit"][style*="ffc107"] {
+    background-color: var(--cor-botao-edicao) !important;
+    border-color: var(--cor-botao-edicao);
+    color: #fff !important;
+}
+button[type="submit"][style*="ffc107"]:hover {
+    background-color: #e77110 !important; /* Laranja um pouco mais escuro */
+}
+
+/* Links de Ação (Editar/Excluir) */
+a[href*="admin_editar_topico.php"] {
+    color: var(--cor-botao-edicao) !important; /* Laranja */
+}
+a[href*="admin_deletar_topico.php"], a[style*="color: red"] {
+    color: var(--cor-botao-exclusao) !important; /* Vermelho */
+}
+
+/* =======================================================
+   IMAGENS NO CONTEÚDO
+   ======================================================= */
 .content-body img {
-    max-width: 600px; 
+    max-width: 100%; /* Responsivo */
     height: auto; 
     display: block;
-    margin: 10px auto; 
-    border: 1px solid #555; 
-    padding: 5px;
-    background: #111;
-}
-
-/* Estilo para campos de formulário */
-input[type="text"], input[type="password"], textarea {
-    background-color: #333;
-    color: white;
-    border: 1px solid #ff3333; /* Borda dos campos em vermelho */
-    border-radius: 4px;
-    padding: 8px;
-}
-
-button[type="submit"] {
-    /* Botão de Criação/Geral (Fundo Vermelho) */
-    background-color: #ff3333 !important; 
-    color: #ffffff !important;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-}
-
-/* Ajuste para o botão Salvar Edição (Amarelo, mantendo a diferenciação) */
-button[type="submit"][style*="ffc107"] {
-    background-color: #ffc107 !important;
-    color: #000000 !important;
-}
-
-/* Ajuste para o botão Deletar (Manter vermelho de erro, se adicionarmos) */
-a[style*="color: red;"] {
-    color: #ff3333 !important;
+    margin: 20px auto; 
+    border-radius: 8px; /* Cantos arredondados nas imagens */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+    border: 1px solid var(--cor-borda-suave);
 }
